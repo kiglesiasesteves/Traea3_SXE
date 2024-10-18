@@ -45,16 +45,41 @@ El reusltado es este
 
 Realizamos un fichero html con Hola Mundo escrito
 
- <html>
      <head>
          <title>Prueba HOola Mundo</title>
      </head>
      <body>
          <h1>Hola Mundo</h1>
      </body>
- </html>
 
 Y refrescamos la pagina web y vemos su contenido 
 
 ![Screenshot_20241018_130815.png](img/Screenshot_20241018_130815.png)
+
+### Crea otro contenedor 'dam_web2' con el mismo bind mount y a otro puerto, por ejemplo 9080.
+
+sudo docker run -d --name dam_web2 -p 9800:80 -v $(pwd):/usr/local/apache2/htdocs httpd:2.4
+
+### Comprobamos con el comando la creación del contenedor:
+
+![Screenshot_20241018_131350.png](img/Screenshot_20241018_131350.png)
+
+El resultado de la página web http://10.0.2.15:9800/
+
+![Screenshot_20241018_130815.png](img/Screenshot_20241018_130815.png)
+
+### Realiza modificaciones de la página y comprueba que los dos servidores 'sirven' la misma página
+
+    <head>
+         <title> Hola Mundo</title>
+     </head>
+     <body>
+         <h1>Antes muerta que sencilla</h1>
+     </body>
+
+![keyla1.png](img/keyla1.png)
+![keyla2.png](img/keyla2.png)
+
+
+
 
