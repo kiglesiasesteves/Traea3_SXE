@@ -15,8 +15,46 @@
 **Crea un contenedor con el nombre 'dam_web1'.**
 
 ````
-sudo docker run --name dam_wet1 -p 8000:80 -d httpd:2.4 httpd -DFOREGROUND -c "ServerName localhost"
+sudo docker create --name dam_wey1 httpd:2.4
 ````
 
-![Screenshot_20241018_114753.png](img/Screenshot_20241018_114753.png)
+![Screensho![Screenshot_20241018_115029.png](img/Screenshot_20241018_115029.png)t_20241018_114753.png](img/Screenshot_20241018_114753.png)
+
+### Si quieres poder acceder desde el navegador de tu equipo, ¿que debes hacer?
+
+![Screenshot_20241018_123719.png](img/Screenshot_20241018_123719.png)
+
+Para comprobar que se conecta al navegador podemos hacer un curl 
+
+![Screenshot_20241018_125334.png](img/Screenshot_20241018_125334.png)
+
+Y luego colocamos  http://localhost:8000/ en el navegador
+
+El reusltado es este 
+
+![Screenshot_20241018_125432.png](img/Screenshot_20241018_125432.png)
+
+### Utiliza bind mount para que el directorio del apache2 'htdocs' esté montado un directorio que tu elijas.
+
+![Screenshot_20241018_125721.png](img/Screenshot_20241018_125721.png)
+
+![Screenshot_20241018_130129.png](img/Screenshot_20241018_130129.png)
+
+
+### Realiza un 'hola mundo' en html y comprueba que accedes desde el navegador.
+
+Realizamos un fichero html con Hola Mundo escrito
+
+ <html>
+     <head>
+         <title>Prueba HOola Mundo</title>
+     </head>
+     <body>
+         <h1>Hola Mundo</h1>
+     </body>
+ </html>
+
+Y refrescamos la pagina web y vemos su contenido 
+
+![Screenshot_20241018_130815.png](img/Screenshot_20241018_130815.png)
 
